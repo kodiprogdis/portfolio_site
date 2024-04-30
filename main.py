@@ -1,4 +1,5 @@
 import os
+import sqlite3
 import sys
 
 import requests
@@ -49,8 +50,13 @@ def about():
 	if request.method == 'POST':
 		name = request.form['name']
 		phone = request.form['phone']
-		with open('file.txt', 'a') as f:
-			f.write(f"Имя: {name}, Телефон: {phone}\n")
+		# Подключение к базе данных
+		conn = sqlite3.connect('db.sqlite3')
+		c = conn.cursor()
+		# Вставка данных в таблицу
+		c.execute('INSERT INTO users (name, phone) VALUES (?, ?)', (name, phone))
+		conn.commit()
+		conn.close()
 		return '<h1>Спасибо за регистрацию!</h1>'
 	return render_template('contacts.html')
 
