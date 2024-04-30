@@ -51,14 +51,34 @@
         -o-background-size: cover;">
 <h1>Компании</h1>
 <div class="image-container" >
-    {% for image in images %}
-    <a>
-        <div>
-            <img src="{{ url_for('static', filename=image['src']) }}" alt="{{ image['alt'] }}">
-            <p>{{ image['text'] }}</p>
-        </div>
-    </a>
-    {% endfor %}
+    <ul>
+        {% for image in images %}
+        <li>
+            <div style="color: white">
+                <p style="color: white">{{ image['text'] }}</p>
+                <img style="background-color: white" src="{{ url_for('static', filename=image['src']) }}" alt="{{ image['alt'] }}">
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+<div style="height:1000px;">
+ <div>
+    <div>
+      <a style="position: absolute;
+    bottom: 10px;
+    left: 50%;
+    margin-left: 0px;
+    display: inline-block; /* Строчно-блочный элемент */
+    background: #8C959D; /* Серый цвет фона */
+    color: #fff; /* Белый цвет текста */
+    padding: 1rem 1.5rem; /* Поля вокруг текста */
+    text-decoration: none; /* Убираем подчёркивание */
+    border-radius: 3px; /* Скругляем уголки */" href="contacts">
+            Связаться
+      </a>
+    </div>
+  </div>
 </div>
 </body>
 </html>

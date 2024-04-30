@@ -8,16 +8,21 @@
 <body>
 <h1>Контакты</h1>
 <div class="divider"></div>
-<!-- Центрирование и выравнивание ссылок -->
 <div class="contact-links">
-    <!-- Электронная почта с ссылкой -->
     <p>Почта <a href="mailto:aidarxabib33487@yandex.ru">aidarxabib33487@yandex.ru</a></p>
-    <!-- Ссылка на Telegram -->
     <p>Telegram <a href="https://t.me/by_KoDi">@by_KoDi</a></p>
+    <h1>Введите ваши данные</h1>
+    <form method="post">
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name">
+        <label for="phone">Телефон:</label>
+        <input type="text" id="phone" name="phone">
+        <input type="submit" value="Отправить">
+    </form>
 </div>
 <style>
         body {
-            background-color: #1C1C1C;
+            background-color: #FFFFF;
             color: white; /* Устанавливаем белый цвет текста */
             width: 100%;
             background: url('static/fon.jpg') no-repeat center center fixed;
