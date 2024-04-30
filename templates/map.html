@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заказать</title>
+    <style>
+        img {
+            width: 1000px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 52px; /* Увеличиваем размер шрифта */
+            color: white;
+        }
+        .map_img{
+            text-align: center;
+        }
+        body {
+        background-color: #101010;
+        }
+    </style>
+</head>
+<body style="width: 100%;
+        background: url('static/fon.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;">
+<h1>ул. Ленина, 82, Альметьевск</h1>
+    <div class="map_img">
+        <img src="{{ url_for('static', filename=map_file) }}" alt="Карта">
+    </div>
+
+</body>
+</html>

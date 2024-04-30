@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Компании</title>
+    <style>
+        body {
+            background-color: #101010;
+            color: white;
+            text-align: center;
+        }
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 0 50px;
+        }
+        .image-container > div {
+            /* flex-basis: calc(100% / 3); */
+            display: flex;
+            box-sizing: border-box;
+            padding: 10px;
+            margin-bottom: -20px;
+
+        }
+        img {
+            width: 500px;
+            height: 330px;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto;
+            border-radius: 5%;
+            border: 3px solid #ccc;
+            padding: 85px;
+        }
+        h1 {
+            font-size: 48px;
+        }
+    a{
+         text-decoration: none;
+           color: white;
+    }
+
+    </style>
+</head>
+<body style="width: 100%;
+        background: url('static/fon.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;">
+<h1>Компании</h1>
+<div class="image-container" >
+    {% for image in images %}
+    <a>
+        <div>
+            <img src="{{ url_for('static', filename=image['src']) }}" alt="{{ image['alt'] }}">
+            <p>{{ image['text'] }}</p>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+</body>
+</html>

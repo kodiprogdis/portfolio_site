@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Компании</title>
+    <style>
+        p{
+            font-size:30px;
+            color: white;
+        }
+        body {
+        background-color: #101010;
+        text-align: center;
+        }
+    </style>
+</head>
+    <body style="width: 100%;
+        background: url('static/fon.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;">
+    <p>{{ name }}</p>
+    <img src="{{url_for('static', filename=src)}}" alt="dsfsdfsdf">
+    <p>{{info}}</p>
+    </body>
+</html>
